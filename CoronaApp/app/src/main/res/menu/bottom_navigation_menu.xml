@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id ="@+id/indiafragment"
+        android:title="@string/india"
+        android:icon="@drawable/ic_flag_24px"/>
+    <item android:id ="@+id/statefragment"
+        android:title="@string/states"
+        android:icon="@drawable/ic_location_city_24px"/>
+    <item android:id ="@+id/informfragment"
+        android:title="@string/visualizations"
+        android:icon="@drawable/ic_insights_24px"/>
+
+</menu>
