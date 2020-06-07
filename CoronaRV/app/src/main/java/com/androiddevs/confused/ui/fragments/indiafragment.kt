@@ -48,7 +48,7 @@ class indiafragment : Fragment() {
         rv = view.findViewById<RecyclerView>(R.id.listOfStatesInIndiaRV)
         thisActivity = activity!!
         errorMsg = view.findViewById(R.id.error_msg)
-//        indiaText = view.findViewById(R.id.india_text)
+        indiaText = view.findViewById(R.id.india_text)
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -119,7 +119,7 @@ private class allInfo : AsyncTask<Void, Void, Void>() {
                 allStates = getStates(allData, allStates)
                 indiaLoading.visibility = View.GONE
                 populateAllStatesList(allStatesList, allStates)
-//                displayInfo(allData)
+                displayInfo(allData)
                 adapter1 = IndiaAdapter(allStatesList)
                 rv.adapter = adapter1
                 rv.layoutManager = LinearLayoutManager(thisActivity?.applicationContext)
@@ -135,13 +135,13 @@ private class allInfo : AsyncTask<Void, Void, Void>() {
             }
 
             private fun displayInfo(allData: AllData?) {
-                allData?.apply { indiaDetails =  "India Data:" + "\n" +
-                        "Confirmed: " + confirmed + "\n" +
-                        "Active: " + active + "\n" +
-                        "Deceased: " + deaths + "\n" +
-                        "Recovered: " + recovered + "\n" +
-                        "Last Updates: " + dateLastModified +
-                        "\n\n" }
+                allData?.apply {
+                    indiaDetails = "India Data:" + "\n" +
+                            "Confirmed: " + confirmed + "\n" +
+                            "Active: " + active + "\n" +
+                            "Deceased: " + deaths + "\n" +
+                            "Recovered: " + recovered + "\n\n"
+                }
                 indiaText.text = indiaDetails
             }
 
