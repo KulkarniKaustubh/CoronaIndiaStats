@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Corona App</string>
+    <string name="image_of_india">Image of India</string>
+    <string name="state_fragment">State Fragment</string>
+    <string name="india">India</string>
+    <string name="states">States</string>
+    <string name="information_fragment">Information Fragment</string>
+    <string name="visualizations">Visualizations</string>
+    <string name="india_fragment">India Fragment</string>
+    <string name="information">Information</string>
+    <string name="name">name</string>
+    <string name="numbers">numbers</string>
+</resources>
