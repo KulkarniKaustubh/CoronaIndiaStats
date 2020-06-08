@@ -1,4 +1,4 @@
-package com.androiddevs.coronastats.ui
+package com.androiddevs.coronastats.ui.adapters
 
 import android.annotation.SuppressLint
 import android.util.Log
@@ -9,16 +9,16 @@ import android.widget.Filter
 import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
 import com.androiddevs.coronastats.R
-import com.androiddevs.coronastats.ui.poko_classes.IndiaStateData
+import com.androiddevs.coronastats.ui.poko_classes.RegionData
 import kotlinx.android.synthetic.main.list_of_states.view.*
 
 class IndiaAdapter(
+    var states: MutableList<RegionData>
 //    var states: MutableList<RegionData>
-        var states: MutableList<IndiaStateData>
 ): RecyclerView.Adapter<IndiaAdapter.StatesViewHolder>(), Filterable{
 
-//    var statesCopy : MutableList<RegionData> = ArrayList(states)
-    var statesCopy : MutableList<IndiaStateData> = ArrayList(states)
+    var statesCopy : MutableList<RegionData> = ArrayList(states)
+//    var statesCopy : MutableList<IndiaStateData> = ArrayList(states)
 
     inner class StatesViewHolder(itemView: View):RecyclerView.ViewHolder(itemView)
 
@@ -38,7 +38,7 @@ class IndiaAdapter(
             stateName.text = states[position].state
             confirmed.text = (states[position].confirmed).toString()
             active.text = (states[position].active).toString()
-            deceased.text = (states[position].deaths).toString()
+            deceased.text = (states[position].deceased).toString()
             recovered.text = (states[position].recovered).toString()
 
         }
@@ -49,7 +49,7 @@ class IndiaAdapter(
         override fun performFiltering(constraint: CharSequence?): FilterResults {
 
             val charSearch = constraint.toString().toLowerCase().trim()
-            var filteredList :MutableList<IndiaStateData> = ArrayList<IndiaStateData>()
+            var filteredList :MutableList<RegionData> = ArrayList<RegionData>()
 
             if (charSearch.isEmpty()) {
                 filteredList.addAll(statesCopy)
@@ -69,7 +69,7 @@ class IndiaAdapter(
 
         override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
             states.clear()
-            states.addAll(results?.values as MutableList<IndiaStateData>)
+            states.addAll(results?.values as MutableList<RegionData>)
             notifyDataSetChanged()
         }
 

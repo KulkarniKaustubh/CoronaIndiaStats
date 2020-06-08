@@ -1,8 +1,8 @@
-package com.androiddevs.coronastats.ui
+package com.androiddevs.coronastats.ui.poko_classes
 
 import com.google.gson.annotations.SerializedName
 
-data class IndiaStateData (
+data class RegionData (
 
 	@SerializedName("region") val state : String,
 	@SerializedName("totalInfected") val active : Int,

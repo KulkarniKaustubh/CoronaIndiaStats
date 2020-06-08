@@ -53,6 +53,7 @@ class StateFragment : Fragment() {
 
         val searchItem : MenuItem = menu.findItem(R.id.searchBar)
         val searchView : SearchView = searchItem.actionView as SearchView
+        searchView.queryHint = "Search for a district..."
 
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {

@@ -1,4 +1,4 @@
-package com.androiddevs.coronastats.ui
+package com.androiddevs.coronastats.ui.poko_classes
 
 import com.google.gson.annotations.SerializedName
 
@@ -8,6 +8,6 @@ data class AllData (
     @SerializedName("recovered") val recovered : Int,
     @SerializedName("deaths") val deaths : Int,
     @SerializedName("totalCases") val confirmed : Int,
-    @SerializedName("regionData") val regionData : List<IndiaStateData>,
+    @SerializedName("regionData") val regionData : List<RegionData>,
     @SerializedName("lastUpdatedAtApify") val dateLastModified : String
 )
