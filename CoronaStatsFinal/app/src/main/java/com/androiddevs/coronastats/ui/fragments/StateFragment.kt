@@ -3,6 +3,7 @@ package com.androiddevs.coronastats.ui.fragments
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.ContentValues.TAG
+import android.content.Context
 import android.os.AsyncTask
 import android.os.Bundle
 import android.util.Log
@@ -12,11 +13,19 @@ import android.widget.TextView
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearSmoothScroller
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.SmoothScroller
 import com.androiddevs.coronastats.R
-import com.androiddevs.coronastats.ui.*
+import com.androiddevs.coronastats.ui.DistrictData
+import com.androiddevs.coronastats.ui.State
+import com.androiddevs.coronastats.ui.StateAdapter
+import com.androiddevs.coronastats.ui.stateApi
 import okhttp3.OkHttpClient
-import retrofit2.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
@@ -53,7 +62,7 @@ class StateFragment : Fragment() {
 
         val searchItem : MenuItem = menu.findItem(R.id.searchBar)
         val searchView : SearchView = searchItem.actionView as SearchView
-        searchView.queryHint = "Search for a district..."
+        searchView.queryHint = "Search for a state or district..."
 
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
@@ -123,7 +132,17 @@ private class stateInfo : AsyncTask<Void, Void, Void>() {
                 stateLoading.visibility = View.GONE
                 stateAdapter = StateAdapter(allStates!! as MutableList<State>)
                 rv.adapter = stateAdapter
+                fun RecyclerView.smoothSnapToPosition(position: Int, snapMode: Int = LinearSmoothScroller.SNAP_TO_START) {
+                    val smoothScroller = object : LinearSmoothScroller(this.context) {
+                        override fun getVerticalSnapPreference(): Int = snapMode
+                        override fun getHorizontalSnapPreference(): Int = snapMode
+                    }
+                    smoothScroller.targetPosition = position
+                    layoutManager?.startSmoothScroll(smoothScroller)
+                }
                 rv.layoutManager = LinearLayoutManager(thisActivity.applicationContext)
+//                (rv.layoutManager as LinearLayoutManager).smoothScrollToPosition(rv, RecyclerView.State(), 4)
+                rv.smoothSnapToPosition(5)
 //                displayInfo(allStates, districts)
             }
 

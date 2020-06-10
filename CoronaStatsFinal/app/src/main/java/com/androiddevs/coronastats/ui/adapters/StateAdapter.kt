@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.os.Build
 import android.text.Html
 import android.text.Spanned
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -35,6 +36,9 @@ class StateAdapter(
 
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: DistrictsViewHolder, position: Int) {
+
+        val item = states[holder.adapterPosition]
+        Log.d("IN STATE ADAPTER", "position is : " + holder.adapterPosition)
 
         fun getColoredSpanned (text : String, color : String) : String {
             var input = "<font color=" + color + ">" + text + "</font>";
@@ -81,7 +85,8 @@ class StateAdapter(
             } else {
                 for (item in statesCopy) {
                     for (i in 0 until item.districtData.size) {
-                        if (item.districtData[i].district.toLowerCase().trim().contains(charSearch)) {
+                        if (item.districtData[i].district.toLowerCase().trim().contains(charSearch) ||
+                                item.state.toLowerCase().trim().contains(charSearch)) {
                             filteredList.add(item)
                         }
                     }

@@ -1,6 +1,7 @@
 package com.androiddevs.coronastats.ui.adapters
 
 import android.annotation.SuppressLint
+import android.content.ContentValues.TAG
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -33,7 +34,7 @@ class IndiaAdapter(
 
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: StatesViewHolder, position: Int) {
-        Log.d("STATES COPY", "states copy is : $statesCopy")
+        Log.d("HOLDER POSITION", "position is : " + holder.adapterPosition)
         holder.itemView.apply{
             stateName.text = states[position].state
             confirmed.text = (states[position].confirmed).toString()

@@ -4,8 +4,9 @@
 
     <item
         android:id="@+id/searchBar"
-        android:icon="@drawable/ic_search_white_24dp"
+        android:icon="@drawable/ic_search_redorange_24dp"
         android:title="@string/search"
+        android:actionLayout="@layout/search_item"
         app:showAsAction="ifRoom|collapseActionView"
         app:actionViewClass="androidx.appcompat.widget.SearchView" />
 

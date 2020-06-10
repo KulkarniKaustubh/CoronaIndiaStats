@@ -75,7 +75,6 @@ class IndiaFragment : Fragment() {
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                Log.d("HERE", "we are here")
                 indiaAdapter.filter.filter(newText)
                 return false
             }
