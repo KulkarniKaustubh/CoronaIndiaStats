@@ -5,7 +5,7 @@
 
     <fragment
         android:id="@+id/indiafragment"
-        android:name="com.androiddevs.confused.ui.fragments.IndiaFragment"
+        android:name="com.androiddevs.coronastats.ui.fragments.IndiaFragment"
         android:label="indiafragment" >
         <action
             app:enterAnim="@anim/slide_in_right"
@@ -24,10 +24,10 @@
     </fragment>
     <fragment
         android:id="@+id/statefragment"
-        android:name="com.androiddevs.confused.ui.fragments.StateFragment"
+        android:name="com.androiddevs.coronastats.ui.fragments.StateFragment"
         android:label="statefragment" />
     <fragment
         android:id="@+id/informfragment"
-        android:name="com.androiddevs.confused.ui.fragments.informfragment"
+        android:name="com.androiddevs.coronastats.ui.fragments.informfragment"
         android:label="informfragment" />
 </navigation>

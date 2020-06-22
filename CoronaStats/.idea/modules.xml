@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CoronaApp.iml" filepath="$PROJECT_DIR$/CoronaApp.iml" group="CoronaApp" />
-      <module fileurl="file://$PROJECT_DIR$/CoronaRV-CoronaApp.iml" filepath="$PROJECT_DIR$/CoronaRV-CoronaApp.iml" group="CoronaApp" />
+      <module fileurl="file://$PROJECT_DIR$/CoronaStatsFinal-CoronaApp.iml" filepath="$PROJECT_DIR$/CoronaStatsFinal-CoronaApp.iml" group="CoronaApp" />
       <module fileurl="file://$PROJECT_DIR$/KotlinProject-CoronaApp.iml" filepath="$PROJECT_DIR$/KotlinProject-CoronaApp.iml" group="CoronaApp" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="CoronaApp/app" />
     </modules>

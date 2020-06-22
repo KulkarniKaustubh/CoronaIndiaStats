@@ -28,6 +28,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
                 android:text="@string/name"
+                android:textStyle="bold"
                 android:textColor="@color/darkblack"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toTopOf="@+id/confirmed"
