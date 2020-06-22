@@ -13,9 +13,13 @@
     <string name="search">Search</string>
     <string name="information">Information</string>
     <string name="about_the_app">About the App</string>
-    <string name="about_the_text">This app captures certain data pertaining to the current Covid-19 situation in India. The condition of India
-    as a whole is captured in the India fragment/page, whereas the details pertaining to the condition in each state is captured in the State fragment/page.\n\n
-    We have displayed the confirmed, active, deceased and recovered cases. They are colour coded in the following order: red, blue, grey and green.
-    In the states fragment all the districts are grouped by their state name. Additionally, we have added a search feature for the 2 fragments available</string>
+    <string name="about_app_text">This app captures certain data pertaining to the current Covid-19 situation in India.
+        The first page is the India page where information pertaining to India as a whole can be found.
+        The second page is the States page where information pertaining to each district
+        in each state is captured.\n\nSearch for a state on the India page and search for a district or state on the States page.</string>
     <string name="down">down</string>
+    <string name="sources">www.covid19india.org\nmohfw.gov.in</string>
+    <string name="link">
+        <a href="https://github.com/TarunGuptaJ/KotlinProject">GitHub</a>
+    </string>
 </resources>

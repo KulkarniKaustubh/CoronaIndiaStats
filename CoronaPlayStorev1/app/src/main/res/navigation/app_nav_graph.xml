@@ -5,7 +5,7 @@
 
     <fragment
         android:id="@+id/indiafragment"
-        android:name="com.androiddevs.confused.ui.fragments.IndiaFragment"
+        android:name="com.ktdevs.coronastats.ui.fragments.IndiaFragment"
         android:label="indiafragment" >
         <action
             app:enterAnim="@anim/slide_in_right"
@@ -15,19 +15,19 @@
             android:id="@+id/action_indiafragment_to_statefragment"
             app:destination="@id/statefragment" />
         <action
+            android:id="@+id/action_indiafragment_to_informfragment"
+            app:destination="@id/informfragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"
-            android:id="@+id/action_indiafragment_to_informfragment"
-            app:destination="@id/informfragment" />
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
     </fragment>
     <fragment
         android:id="@+id/statefragment"
-        android:name="com.androiddevs.confused.ui.fragments.StateFragment"
+        android:name="com.ktdevs.coronastats.ui.fragments.StateFragment"
         android:label="statefragment" />
     <fragment
         android:id="@+id/informfragment"
-        android:name="com.androiddevs.confused.ui.fragments.informfragment"
+        android:name="com.ktdevs.coronastats.ui.fragments.InformFragment"
         android:label="informfragment" />
 </navigation>
