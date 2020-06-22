@@ -1,7 +1,8 @@
 package com.androiddevs.coronastats.ui.adapters
 
 import android.annotation.SuppressLint
-import android.content.ContentValues.TAG
+import android.content.ClipData.Item
+import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -10,7 +11,11 @@ import android.widget.Filter
 import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
 import com.androiddevs.coronastats.R
+import com.androiddevs.coronastats.ui.Communicator
+import com.androiddevs.coronastats.ui.MainActivity
+import com.androiddevs.coronastats.ui.fragments.IndiaFragment
 import com.androiddevs.coronastats.ui.poko_classes.RegionData
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.list_of_states.view.*
 
 class IndiaAdapter(
@@ -21,10 +26,10 @@ class IndiaAdapter(
     var statesCopy : MutableList<RegionData> = ArrayList(states)
 //    var statesCopy : MutableList<IndiaStateData> = ArrayList(states)
 
-    inner class StatesViewHolder(itemView: View):RecyclerView.ViewHolder(itemView)
+    class StatesViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StatesViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.list_of_states,parent,false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.list_of_states, parent,false)
         return StatesViewHolder(view)
     }
 
@@ -43,6 +48,17 @@ class IndiaAdapter(
             recovered.text = (states[position].recovered).toString()
 
         }
+
+        holder.itemView.setOnClickListener (object : View.OnClickListener {
+            override fun onClick(v: View?) {
+                Log.d("CLICKED ON", "onClick : clicked on : " + holder.adapterPosition)
+                var indiaFrag = IndiaFragment()
+                val bundle = Bundle ()
+                bundle.putInt("position", holder.adapterPosition)
+                indiaFrag.arguments = bundle
+            }
+
+        })
     }
 
     private var stateFilter = object : Filter() {

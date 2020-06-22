@@ -132,18 +132,20 @@ private class stateInfo : AsyncTask<Void, Void, Void>() {
                 stateLoading.visibility = View.GONE
                 stateAdapter = StateAdapter(allStates!! as MutableList<State>)
                 rv.adapter = stateAdapter
-                fun RecyclerView.smoothSnapToPosition(position: Int, snapMode: Int = LinearSmoothScroller.SNAP_TO_START) {
-                    val smoothScroller = object : LinearSmoothScroller(this.context) {
-                        override fun getVerticalSnapPreference(): Int = snapMode
-                        override fun getHorizontalSnapPreference(): Int = snapMode
-                    }
-                    smoothScroller.targetPosition = position
-                    layoutManager?.startSmoothScroll(smoothScroller)
-                }
                 rv.layoutManager = LinearLayoutManager(thisActivity.applicationContext)
+
 //                (rv.layoutManager as LinearLayoutManager).smoothScrollToPosition(rv, RecyclerView.State(), 4)
                 rv.smoothSnapToPosition(5)
 //                displayInfo(allStates, districts)
+            }
+
+            private fun RecyclerView.smoothSnapToPosition(position: Int, snapMode: Int = LinearSmoothScroller.SNAP_TO_START) {
+                val smoothScroller = object : LinearSmoothScroller(this.context) {
+                    override fun getVerticalSnapPreference(): Int = snapMode
+                    override fun getHorizontalSnapPreference(): Int = snapMode
+                }
+                smoothScroller.targetPosition = position
+                layoutManager?.startSmoothScroll(smoothScroller)
             }
 
             private fun displayInfo(

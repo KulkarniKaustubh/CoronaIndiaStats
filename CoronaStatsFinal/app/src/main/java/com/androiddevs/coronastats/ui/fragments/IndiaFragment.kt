@@ -81,7 +81,6 @@ class IndiaFragment : Fragment() {
 
         });
     }
-
 }
 
 private class allInfo : AsyncTask<Void, Void, Void>() {
@@ -163,8 +162,8 @@ private class allInfo : AsyncTask<Void, Void, Void>() {
                 populateAllStatesList(allStatesList, allStates)
                 displayInfo(allData)
                 indiaAdapter = IndiaAdapter(allStatesList)
-                rv.adapter = indiaAdapter
                 rv.layoutManager = LinearLayoutManager(thisActivity.applicationContext)
+                rv.adapter = IndiaAdapter(allStatesList)
             }
 
 
@@ -199,7 +198,6 @@ private class allInfo : AsyncTask<Void, Void, Void>() {
         })
 
     }
-
 //    @SuppressLint("SetTextI18n")
 //    override fun onPostExecute(result: Void?) {
 //        super.onPostExecute(result)
