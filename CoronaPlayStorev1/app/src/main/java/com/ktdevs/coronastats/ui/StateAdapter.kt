@@ -88,6 +88,7 @@ class StateAdapter(
                         if (item.districtData[i].district.toLowerCase().trim().contains(charSearch) ||
                             item.state.toLowerCase().trim().contains(charSearch)) {
                             filteredList.add(item)
+                            break
                         }
                     }
 //                    if (item.state.toLowerCase().trim().contains(charSearch)) {
